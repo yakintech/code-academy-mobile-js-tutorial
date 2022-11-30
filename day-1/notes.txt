@@ -1,0 +1,16 @@
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+
+
+Primite and value
+https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0#:~:text=Javascript%20has%205%20data%20types,to%20them%20collectively%20as%20Objects.
+https://www.geeksforgeeks.org/primitive-and-reference-value-in-javascript/
+
+
+Style Guide
+https://www.w3schools.com/js/js_conventions.asp
+https://google.github.io/styleguide/jsguide.html
+
+
+let and var
+https://www.programiz.com/javascript/let-vs-var
+

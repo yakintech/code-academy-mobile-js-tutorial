@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    //Primitive Values ( Number, String, Boolean, Undefined, Symbol, and BigInt)
+    var name = "Çağatay";
+
+    var firstName = name;
+    firstName = "Revan";
+
+
+
+    console.log('Name: ', name);
+    console.log('First Name: ', firstName);
+
+
+    //Reference Values ( Array, Object, and Function)
+    var user = {
+        name : 'Azerin',
+        surname: "Ok"
+    }
+    //ref address: XX65 
+    var user2 = user;
+    user2.name = "Murat";
+
+    console.log('User Name ', user.name);
+    console.log('User-2 Name ', user2.name);
+
+
+    //ARRAY
+
+    var cities = ['Baku', 'İstanbul', 'İzmir'];
+    var cities2 = cities;
+
+    cities.push('Ankara');
+
+
+    console.log('Cities: ', cities);
+    console.log('Cities-2: ', cities2);
+
+
+    //Function ( Methods...)
+
+    // function hello(){
+
+    // }
+
+    var hello = function(){
+        console.log('Hello');
+    }
+
+    var salam = hello;
+
+    salam = function(){
+        console.log('Salam')
+    }
+
+    hello();
+    salam();
+
+
+
+</script>
+
+</html>
