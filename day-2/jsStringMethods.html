@@ -66,9 +66,33 @@
 
     //indexOf, subStr, lowerCase, UpperCase
 
+    //getFullName('ali',' çağatay', 'yilmaz')
+
+    //Ali Çağatay Yılmaz
+
+    //split*
+    let cities = 'İzmir, Ankara, İstanbul, Baku';
+    let cityArray = cities.split(',');
 
 
+    //concat
+    let productName = "IPhone";
+    let productDesc = "lorem ipsum";
 
+    let productFullName = productName.concat(productDesc, " 33500 TL", "****" )
+    console.log('productFullName ',productFullName);
+
+    let country = "Türkiye";
+    let code = "+90";
+
+
+    // let countryDescr = "Country name: " + country + " code: " + code;
+    let countryDescr = `Country name: ${country} code: ${code}`;
+
+    console.log('countryDescr', countryDescr);
+
+    //length
+    console.log('countryDescr.length ', countryDescr.length);
 
 
 </script>
