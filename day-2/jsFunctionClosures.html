@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    function hello() {
+        console.log('Hello JS!');
+    }
+
+    const merhaba = function () {
+        console.log('Merhaba JS!');
+    }
+
+    function calc(x, y) {
+
+        let z = (x * x) + (y * y);
+
+        return z;
+    }
+
+
+    function calcTax(price, tax = 18) {
+        let total = (price * tax) * 0.5;
+
+        return total;
+    }
+
+
+
+
+    const pet = function (name) {
+        console.log('1');
+
+        const getName = function () {
+
+            console.log('2');
+            return name;
+        }
+        return getName;
+    }
+
+    //1. process
+    //const myPet = pet('Vivie');
+
+
+    // console.log(typeof 42);
+    // console.log(typeof 'Çağatay');
+    // console.log(typeof false);
+    // console.log(typeof myPet);
+
+
+
+    //2. process
+    //myPet(); // Returns "Vivie"
+
+</script>
+
+</html>

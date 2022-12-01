@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    const print = function (data) {
+        console.log('Data', data);
+    }
+
+    function calc(price, tax, myCallback) {
+
+        let total = (price * tax) * 0.5;
+        //
+        myCallback(total);
+    }
+
+    calc(100, 18, print)
+
+
+    setTimeout(myFunc, 2000);
+
+    function myFunc(){
+        console.log('Hello callback!');
+    }
+
+    let cities = ['Baku', 'İstanbul', 'Paris', 'Ankara'];
+
+    cities.forEach(cityCallback);
+
+
+    function cityCallback(item, key){
+        console.log('Item ', item);
+        console.log('Key ', key);
+    }
+
+
+
+</script>
+
+</html>
