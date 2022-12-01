@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    //Dışarıdan 1 değer alan ve aldığı değer 100 den büyükse %25 değilse %10 indirim yapıp bana fiyatı döndüren fonksiyon.
+    // Dışarıdan aldığı değer NUMERIC olmak zorunda!
+
+    function priceCalc(price) {
+
+        if (isNaN(price)) {
+            alert('Error!')
+        }
+        else {
+            let result = 0;
+            if (price > 100) {
+                result = price * 0.75
+            }
+            else {
+                result = price * 0.9;
+            }
+            return result;
+        }
+
+    }
+
+    let data = priceCalc('çağatay');
+
+    
+
+</script>
+
+</html>

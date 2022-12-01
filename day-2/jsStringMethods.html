@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    let name = '   çağAtaY';
+
+    let upperName = name.toUpperCase()
+
+    //UPPER
+    console.log('UPPER ', upperName);
+
+    //LOWER
+    console.log('LOWER ', name.toLowerCase());
+
+    //TRIM-LowerCase
+    let nameTrim = name.trim().toLowerCase();
+    console.log('TRIM ', nameTrim);
+
+    //Replace-ReplaceAll
+
+    let phoneNumber = '+905437331470'
+
+    let newPhoneNumber = phoneNumber.replace('+90', '')
+
+
+    //ÇAğatay kelimesindeli "a" harflerini "q" ile değiştir
+
+    let replaceName = name.replaceAll('a', 'q');
+    console.log('Replace ', replaceName);
+
+ 
+    //Substr and IndexOf
+    let fullName = "cagatay"; //Cagatay
+    
+    //1
+    let newFullName = fullName[0].toUpperCase() + fullName.substr(1);
+
+    //2
+    let newFullName2 = fullName.substring(0,1).toUpperCase() + fullName.substr(1);
+
+
+    //indexOf - lasIndexOf
+    let surname = "Yildiz"
+
+    let indexNumber = surname.indexOf('l');
+
+    let indexNumber2 = surname.indexOf('i');
+    let indexNumber3 = surname.lastIndexOf('i');
+
+    
+
+    let full = "çağatay yıldız";  //Çağatay Yıldız
+    let full2 = "revan zaKarYali"; //Revan Zakaryali
+
+
+    //indexOf, subStr, lowerCase, UpperCase
+
+
+
+
+
+
+</script>
+
+</html>
