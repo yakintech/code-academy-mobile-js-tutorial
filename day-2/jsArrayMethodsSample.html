@@ -36,9 +36,16 @@
     let cities = ['Baku', 'İstanbul', 'Paris', 'Londra', 'Los Angeles', 'Moskova', 'Berlin', 'Bağdat', 'Atina'];
 
     //1. her saniyede sırayla bir elementi büyük harf yap
-    setInterval(() => {
-        
-    }, 3000);
+    let counter = 0;
+    let interval = setInterval(() => {
+        cities[counter] = cities[counter].toUpperCase();
+        counter++;
+
+        if(counter == (cities.length)){
+            clearInterval(interval);
+        }
+
+    }, 1000);
 
 </script>
 
