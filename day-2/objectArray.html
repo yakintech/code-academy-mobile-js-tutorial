@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    let categories = [
+        {
+            "id": 2,
+            "description": "Sweet and savory sauces relishes spreads and seasonings",
+            "name": "Condiments"
+        },
+        {
+            id: 1,
+            description: "Soft drinks coffees teas beers and ales",
+            name: "Beverages"
+        },
+        {
+            "id": 3,
+            "description": "Desserts candies and sweet breads",
+            "name": "Confections"
+        },
+        {
+            "id": 4,
+            "description": null,
+            "name": "Dairy Products"
+        },
+        {
+            "id": 5,
+            "description": "Breads crackers pasta and cereal",
+            "name": "Grains/Cereals"
+        },
+        {
+            "id": 6,
+            "description": "Prepared meats",
+            "name": "Meat/Poultry"
+        },
+        {
+            "id": 7,
+            // "description": "Dried fruit and bean curd",
+            "name": "Produce"
+        },
+        {
+            "id": 8,
+            "description": "Seaweed and fish",
+            "name": "Seafood"
+        }
+    ]
+
+    //ilk elemanın adı nedir?
+   // console.log(categories[0].name)
+
+    //categories dizisindeki tüm elemanların adını console a yaz.
+    
+    // for(let i = 0; i < categories.length; i++){
+
+    //     //console.log(categories[i].name);
+
+    // }
+
+    // let counter = 0;
+
+    // while(counter < categories.length){
+    //    // console.log(categories[counter].name);
+    //     counter++;
+    // }
+
+
+    // categories.forEach(getCategory)
+
+    // function getCategory(item){
+    //     console.log('ITEM ', item.name);
+    // }
+
+    // categories.forEach(function(item){
+    //     console.log('Item ', item.name);
+    // })
+
+    categories.map(function(item){
+        // if(item.description != undefined){
+        //     console.log('Item ', item.description.toUpperCase());
+        // }
+
+        console.log('Item Name ', item['name'].toUpperCase());
+        console.log('Item Description ', item.description.toUpperCase());
+
+    })
+
+
+    // id no 5 olan category nin adı?
+
+    let findCategory = {};
+
+    categories.forEach(function(item){
+
+        if(item.id == 5){
+            findCategory = item;
+        }
+
+    })
+
+
+
+</script>
+
+</html>
