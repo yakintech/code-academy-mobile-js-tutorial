@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    let numbers = [4, 11, 40, 100, 554];
+
+
+    setInterval(() => {
+        let randomNumber = Math.floor(Math.random() * 1000);
+        //üretilen sayı dizinin en küçük sayısından büyükse onun YERİNE GEÇSİN. 
+        
+
+        //find minimum value
+        let minValue = Math.min.apply(Math, numbers);
+        //find indexNo
+        let minIndexNo = numbers.indexOf(minValue);
+
+        if(randomNumber > minValue){
+            numbers[minIndexNo] = randomNumber
+        }
+
+    }, 1000);
+
+
+    let cities = ['Baku', 'İstanbul', 'Paris', 'Londra', 'Los Angeles', 'Moskova', 'Berlin', 'Bağdat', 'Atina'];
+
+    //1. her saniyede sırayla bir elementi büyük harf yap
+    setInterval(() => {
+        
+    }, 3000);
+
+</script>
+
+</html>

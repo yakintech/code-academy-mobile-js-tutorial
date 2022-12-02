@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="stop()">Stop!</button>
+</body>
+<script>
+
+    //2000 ms -> 1000 ms = 1 s
+    let timing = setInterval(intervalSample, 500);
+
+    function intervalSample() {
+        console.log('Hello Interval');
+    }
+
+    function stop() {
+        clearInterval(timing);
+    }
+
+    // setInterval(function(){
+    //     console.log('Çağatay Yıldız');
+    // }, 3000)
+
+    setTimeout(function () {
+        alert('Hello timeout!')
+    }, 3000)
+
+
+</script>
+
+</html>
