@@ -1055,7 +1055,41 @@
 
     let avgPrice = total / products.length;
 
+    let sortedProducts = products.sort(function (a, b) {
+        return a.name.localeCompare(b.name);
+    })
 
+    let cities = ["istanbul", "baku", "paris", "londra", "ankara", "atina", "moskova"];
+
+    //reference
+    cities.sort();
+
+    let numbers = [3, 99, 22, 51, -1, 2]
+
+    numbers.sort(function (a, b) {
+        return a - b;
+    })
+
+
+
+    // negative, pozitive, zero
+    // localeCompare -> -1, 0 , 1 ( negative, pozitive, zero)
+
+
+    let sortedProductsByUnitPrice = products.sort(function (a, b) {
+        return a.unitPrice - b.unitPrice;
+    })
+
+
+    //en kıymetsiz ürün
+    let min = sortedProductsByUnitPrice[0];
+
+    //en kıymetli ürün
+    let max = sortedProductsByUnitPrice[products.length - 1];
+
+
+    let minPrice = Math.min(...products.map(x => x.unitPrice));
+    let maxPrice = Math.max(...products.map(x => x.unitPrice))
 
 
 </script>
