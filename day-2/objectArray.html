@@ -90,22 +90,19 @@
         //     console.log('Item ', item.description.toUpperCase());
         // }
 
-        console.log('Item Name ', item['name'].toUpperCase());
-        console.log('Item Description ', item.description.toUpperCase());
+        //console.log('Item Name ', item['name'].toUpperCase());
+       // console.log('Item Description ', item.description?.toUpperCase());
 
     })
 
 
     // id no 5 olan category nin adı?
 
-    let findCategory = {};
-
     categories.forEach(function(item){
 
         if(item.id == 5){
-            findCategory = item;
+            console.log('NAME ', item.name);
         }
-
     })
 
 
