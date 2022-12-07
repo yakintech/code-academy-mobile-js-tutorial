@@ -13,13 +13,18 @@
 <body>
     <div>
         <h1>Top 1 Order - <span id="topOrder"></span></h1>
+        <h1>Top 1 Country - <span id="topCountry"></span></h1>
+
     </div>
     <table class="w3-table-all w3-hoverable">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Customer Id</th>
+                <th>Employee Id</th>
                 <th>Order Date</th>
+                <th>Ship City</th>
+                <th>Ship Country</th>
                 <th>Cart Lenght</th>
                 <th style="cursor: pointer" onclick="orderByTotal()">Total</th>
             </tr>
@@ -48,8 +53,17 @@
             let customerIdTd = document.createElement('td');
             customerIdTd.innerHTML = element.customerId;
 
+            let employeeIdTd = document.createElement('td');
+            employeeIdTd.innerHTML = element.employeeId;
+
             let orderDateTd = document.createElement('td');
             orderDateTd.innerHTML = element.orderDate;
+
+            let shipCityTd = document.createElement('td');
+            shipCityTd.innerHTML = element.shipAddress.city;
+
+            let shipCountryTd = document.createElement('td');
+            shipCountryTd.innerHTML = element.shipAddress.country;
 
             let cartLengthTd = document.createElement('td');
             cartLengthTd.innerHTML = element.details.length;
@@ -69,17 +83,14 @@
 
             trElement.appendChild(idTd);
             trElement.appendChild(customerIdTd);
+            trElement.appendChild(employeeIdTd);
             trElement.appendChild(orderDateTd);
+            trElement.appendChild(shipCityTd);
+            trElement.appendChild(shipCountryTd);
             trElement.appendChild(cartLengthTd);
             trElement.appendChild(cartTotalTd);
 
-
-
-
-
             document.querySelector('tbody').appendChild(trElement);
-
-
         });
     }
 
@@ -98,7 +109,7 @@
             orderByTotalAsc = true;
 
         }
-        else{
+        else {
             orders.sort(function (a, b) {
                 return a.totalCart - b.totalCart;
             });
@@ -110,13 +121,72 @@
     }
 
     //top order calc
-    // orders.sort(function(a,b){
-    //     return b.totalCart - a.totalCart;
-    // })
+    orders.sort(function (a, b) {
+        return b.totalCart - a.totalCart;
+    })
 
-    // let topOrder = orders[0];
+    let topOrder = orders[0];
 
-    // document.getElementById('topOrder').innerHTML = topOrder.customerId + " " + topOrder.totalCart
+    document.getElementById('topOrder').innerHTML = topOrder.customerId + " " + topOrder.totalCart
+
+
+
+    //En çok hangi ülkeye satış yaptım VE ne kadar?
+
+    let countrySales = [];
+
+    orders.forEach(element => {
+
+        let countryData = countrySales.find(q => q.name == element.shipAddress.country);
+
+        if (countryData != undefined) {
+            countryData.totalAmount = countryData.totalAmount + element.totalCart;
+        }
+        else {
+            let newCountry = {
+                name: element.shipAddress.country,
+                totalAmount: element.totalCart
+            }
+            countrySales.push(newCountry);
+        }
+
+    });
+
+
+    let sortedCountry = countrySales.sort(function (a, b) {
+        return b.totalAmount - a.totalAmount
+    })
+
+    document.getElementById('topCountry').innerHTML = sortedCountry[0].name + " " +  sortedCountry[0].totalAmount.toFixed(2);
+
+
+
+    //En kıymetli müşterim
+    //En kıymetli çalışanım
+
+
+    //Ürün satış adet miktar
+
+    let productSalesCount = [];
+
+    orders.forEach(element => {
+
+        element.details.forEach(item => {
+            let product = productSalesCount.find(q => q.productId == item.productId);
+
+            if(product != undefined){
+                product.quantity = product.quantity + item.quantity
+            }
+            else{
+                let newProduct = {
+                    productId : item.productId,
+                    quantity : item.quantity
+                }
+                productSalesCount.push(newProduct);
+            }
+        })
+
+    })
 
 
 </script>
