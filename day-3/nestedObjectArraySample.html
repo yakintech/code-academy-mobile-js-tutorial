@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="./orders.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1>Top 1 Order - <span id="topOrder"></span></h1>
+    </div>
+    <table class="w3-table-all w3-hoverable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Customer Id</th>
+                <th>Order Date</th>
+                <th>Cart Lenght</th>
+                <th style="cursor: pointer" onclick="orderByTotal()">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+
+</body>
+<script>
+
+    function fillTable(data) {
+
+        document.querySelector('tbody').innerHTML = "";
+
+        data.forEach(element => {
+
+            let trElement = document.createElement('tr');
+
+            let idTd = document.createElement('td');
+            idTd.innerHTML = element.id;
+
+            let customerIdTd = document.createElement('td');
+            customerIdTd.innerHTML = element.customerId;
+
+            let orderDateTd = document.createElement('td');
+            orderDateTd.innerHTML = element.orderDate;
+
+            let cartLengthTd = document.createElement('td');
+            cartLengthTd.innerHTML = element.details.length;
+
+
+            let totalCart = 0;
+
+            element.details.forEach(item => {
+                totalCart = totalCart + ((item.unitPrice * item.quantity) * (1 - item.discount))
+            })
+
+            let cartTotalTd = document.createElement('td');
+            cartTotalTd.innerHTML = totalCart.toFixed(2);
+
+            element.cartLength = element.details.length;
+            element.totalCart = totalCart;
+
+            trElement.appendChild(idTd);
+            trElement.appendChild(customerIdTd);
+            trElement.appendChild(orderDateTd);
+            trElement.appendChild(cartLengthTd);
+            trElement.appendChild(cartTotalTd);
+
+
+
+
+
+            document.querySelector('tbody').appendChild(trElement);
+
+
+        });
+    }
+
+
+    fillTable(orders);
+
+    let orderByTotalAsc = false;
+
+    function orderByTotal() {
+
+        if (orderByTotalAsc == false) {
+            orders.sort(function (a, b) {
+                return b.totalCart - a.totalCart;
+            });
+
+            orderByTotalAsc = true;
+
+        }
+        else{
+            orders.sort(function (a, b) {
+                return a.totalCart - b.totalCart;
+            });
+
+            orderByTotalAsc = false;
+        }
+
+        fillTable(orders);
+    }
+
+    //top order calc
+    // orders.sort(function(a,b){
+    //     return b.totalCart - a.totalCart;
+    // })
+
+    // let topOrder = orders[0];
+
+    // document.getElementById('topOrder').innerHTML = topOrder.customerId + " " + topOrder.totalCart
+
+
+</script>
+
+</html>
