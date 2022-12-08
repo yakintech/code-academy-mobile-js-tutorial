@@ -161,8 +161,14 @@
 
 
 
-    //En kıymetli müşterim
-    //En kıymetli çalışanım
+    //1) freight 1 den küçük olan siparişleri console a yazdır
+    let filteredOrders = orders.filter(q => q.freight < 1);
+
+    //2) customerID WARTH olan kaç adet sipariş var?
+    let filteredOrders2 = orders.filter(q => q.customerID == 'WARTH');
+
+    //3) En kıymetli müşterim
+    //4) En kıymetli çalışanım
 
 
     //Ürün satış adet miktar

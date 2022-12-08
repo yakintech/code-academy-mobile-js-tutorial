@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="./orders.js"></script>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    //orderDate 1997 yılındaki siparişleri console a yaz
+
+    orders.forEach(element => {
+        let date = moment(element.orderDate, 'YYYY-MM-DD');
+        if (date.year() == 1997) {
+            console.log(element);
+        }
+    });
+
+    let filteredOrders = orders.filter(q => moment(q.orderDate, 'YYYY-MM-DD').year() == 1997);
+
+    console.log('Filtered Orders ', filteredOrders);
+
+
+    //geciken siparişler!
+    //shippedDate > requiredDate
+
+    orders.forEach(element => {
+
+        let shippedDate = moment(element.shippedDate, 'YYYY-MM-DD');
+        let requiredDate = moment(element.requiredDate, 'YYYY-MM-DD');
+
+        if (shippedDate > requiredDate) {
+            console.log(shippedDate.diff(requiredDate, 'days'));
+            console.log(shippedDate.toString() + " " + requiredDate.toString());
+        }
+
+    });
+
+    //January de gelen siparişler
+    //1997 January de gelen siparişler
+    //En fazla geciken siparişim***
+    
+   
+
+
+
+</script>
+
+</html>
