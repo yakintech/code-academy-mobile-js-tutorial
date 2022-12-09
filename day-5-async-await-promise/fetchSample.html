@@ -41,6 +41,23 @@
 
 
 
+
+
+    let prom = new Promise(function (resolve, reject) {
+        fetch('https://jsonplaceholder.typicode.com/users22').then(res => {
+            if (res.status == 404)
+                reject('Error')
+        })
+    })
+
+
+
+    prom.catch(err => {
+        console.log('Error!!!! ', err);
+    })
+
+
+
 </script>
 
 </html>
