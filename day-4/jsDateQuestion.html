@@ -46,9 +46,20 @@
     });
 
     //January de gelen siparişler
+    let filteredOrders2 = orders.filter(q => moment(q.orderDate, 'YYYY-MM-DD').month() == 1);
+
     //1997 January de gelen siparişler
+    let filteredOrders3 = orders.filter(q => moment(q.orderDate, 'YYYY-MM-DD').month() == 1 && moment(q.orderDate, 'YYYY-MM-DD').year() == 1997);
+
     //En fazla geciken siparişim***
-    
+    let filteredOrders4 = orders.filter(q => moment(q.shippedDate, 'YYYY-MM-DD') > moment(q.requiredDate, 'YYYY-MM-DD'));
+
+
+    //Monday de giden siparişlerim***
+    let filteredOrders5 = orders.filter(q => moment(q.orderDate, 'YYYY-MM-DD').weekday() == 1);
+
+    //1997 yılında toplam freight?
+    //Max freight ödediğim yıl? ***
    
 
 

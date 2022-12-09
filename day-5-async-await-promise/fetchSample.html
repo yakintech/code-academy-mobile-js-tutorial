@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    //Phone number 1 ile başlayanları console a yaz
+
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res => res.json())
+        .then(data => {
+            let users = data;
+
+            let filteredUsers = users.filter(q => q.phone.startsWith('1'));
+            console.log('filteredUsers ', filteredUsers);
+        })
+
+    //city Howemouth olan userlar
+
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res => res.json())
+        .then(data => {
+            let users = data;
+
+            let filteredUsers = users.filter(q => q.address?.city == 'Howemouth');
+            console.log('filteredUsers ', filteredUsers);
+        })
+
+    //https://jsonplaceholder.typicode.com/todos
+    //userid 1 olan kaç todo var?
+    //title "a" ile bitenleri console a yazdır
+
+
+
+</script>
+
+</html>

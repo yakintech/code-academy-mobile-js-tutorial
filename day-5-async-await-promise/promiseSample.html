@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //Callback   ->  Promise   ->   Async-Await
+
+    function calc(x, y, call) {
+
+        let result = x + y * 0.5;
+        if (result > 10) {
+            throw "Error"
+        }
+        call(result);
+    }
+
+    calc(5, 10, myCallback);
+
+    function myCallback(data) {
+        console.log('Data ', data);
+    }
+
+
+    let cities = ['İzmir', 'istanbul', 'Baku'];
+
+    cities.map(getCity);
+    cities.forEach(getCity)
+
+    function getCity(value, index) {
+        //console.log('Value ', value);
+    }
+
+
+
+
+    function calcTax(price, tax) {
+
+    }
+
+
+
+    let promise = new Promise(function (myResolve, myReject) {
+
+        //Success
+        let result = 20;
+
+        if (result > 10) {
+            setTimeout(() => {
+                 myResolve(result); 
+            }, 2000);
+          
+        }
+        else {
+            //Error
+            myReject('Error');
+        }
+
+    })
+
+    console.log('Promise ', promise);
+
+
+// Pending
+// Fulfilled
+// Rejected
+
+    promise
+        .then(function (res) {
+            console.log('1');
+        })
+        .catch(function (err) {
+            console.log('Error ', err);
+        })
+
+        //then -> Success
+        //catch -> Error
+
+        console.log('2');
+
+</script>
+
+</html>
