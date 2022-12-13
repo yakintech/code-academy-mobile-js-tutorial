@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <button onclick="putCategory()">Put with fetch</button>
+    <button onclick="putCategory2()">Put with axios</button>
+
+</body>
+<script>
+
+    function putCategory() {
+
+        let updateCategory = {
+            name: "Camp",
+            description: "Camp products..."
+        }
+
+        fetch(`https://northwind.vercel.app/api/categories/${2}`, {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updateCategory)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('Data ', data);
+                alert('Success!')
+            })
+
+    }
+
+    function putCategory2() {
+
+        let updateCategory = {
+            name: "Sport",
+            description: "Sport products..."
+        }
+
+        axios.put(`https://northwind.vercel.app/api/categories/${2}`, updateCategory)
+            .then(res => {
+                console.log('Response Data ', res.data);
+                alert('Success!!');
+            })
+    }
+</script>
+
+
+</html>

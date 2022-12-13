@@ -1,0 +1,21 @@
+Axios ile bir adet customer ekle
+Axios ile bir adet customer sil
+Axios ile bir adet customer güncelle - PUT
+
+Fetch ile bir adet customer ekle
+Fetch ile bir adet customer sil
+Fetch ile bir adet customer güncelle  - PUT
+
+** axios **
+En Pahalı Ürün ( /products )
+Ortalama stok miktarı ( /products )
+“C” ile başlayan ürünler ( /products )
+“London” şehrindeki müşterileri console a yaz ( /customers )
+Region NULL olan kaç adet customer var
+
+https://jsonplaceholder.typicode.com/posts
+Id si 1 olan user ın kaç adet postu var?
+
+
+https://jsonplaceholder.typicode.com/photos
+1 numaralı albümde kaç adet fotoğraf var?
